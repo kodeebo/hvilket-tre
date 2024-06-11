@@ -3,7 +3,10 @@ import allTrees from "@/public/trees.json";
 import MovingImage from "@/components/MovingImage";
 import Link from "next/link";
 import Image from "next/image";
-type Props = {};
+
+type Props = {
+  params: any;
+};
 
 interface Tree {
   name: string;

@@ -13,21 +13,15 @@ type Props = {
   src: string;
   alt: string;
   name?: string;
-  size: "large" | "small";
 };
 
-const Category = ({ href, src, alt, name, size = "large" }: Props) => {
+const Category = ({ href, src, alt, name }: Props) => {
   const pathname = usePathname();
   const isActive = pathname.includes(href);
   return (
     <Link href={href} className="flex flex-col justify-between h-full gap-2">
       <h2 className={roboto.className}>{name}</h2>
-      <MovingImage
-        src={src}
-        width={size === "large" ? 300 : 100}
-        height={size === "large" ? 300 : 100}
-        alt={alt}
-      />
+      <MovingImage src={src} width={300} height={300} alt={alt} />
     </Link>
   );
 };
